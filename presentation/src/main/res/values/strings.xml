@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FileFinder</string>
+    <string name="error_unknown">Unknown error has occurred.</string>
+    <string name="error_database">Unknown Database error.</string>
+    <string name="error_backend">Unknown Service error.</string>
+</resources>

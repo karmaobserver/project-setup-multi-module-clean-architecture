@@ -1,0 +1,56 @@
+[versions]
+# Define the dependency versions
+minSDK = "33"
+kotlin = "1.7.21"
+android-gradle-plugin = "7.3.1"
+androidx-core-ktx = "1.9.0"
+# We should avoid using not stable libraries. Since this is not a production ready code, we use updated version as it resolve bug from 1.5.1 version regarding the lifecycle.
+androidx-appcompat = "1.6.0-rc01"
+material = "1.6.1"
+koin = "3.2.0"
+kotlinx-coroutines = "1.6.4"
+lifecycle-extensions = "2.2.0"
+lifecycle-viewmodel-ktx = "2.5.0"
+lifecycle-runtime-ktx = "2.5.0"
+room = "2.4.3"
+navigation = "2.5.3"
+ktlint = "11.0.0"
+
+testing-junit = "4.13.2"
+testing-androidx-junit = "1.1.4"
+testing-espresso-core = "3.5.0"
+
+[libraries]
+# Define the libraries
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycle-extensions" }
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel-ktx" }
+lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+
+testing-junit = { module = "junit:junit", version.ref = "testing-junit" }
+testing-androidx-junit = { module = "androidx.test.ext:junit", version.ref = "testing-androidx-junit" }
+testing-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "testing-espresso-core" }
+
+[bundles]
+# Define bundles/groups of libraries
+koin = ["koin-core", "koin-android"]
+lifecycle = ["lifecycle-extensions", "lifecycle-viewmodel-ktx", "lifecycle-runtime-ktx"]
+navigation = ["navigation-fragment-ktx", "navigation-ui-ktx"]
+
+[plugins]
+# Define the plugins
+android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
